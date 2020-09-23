@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="shelter.OrganicDogTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2020-09-21T20:24:34" hostname="UNIT2020-15" time="0.029">
+  <properties/>
+  <testcase name="giveWaterToShouldIncreaseWaterLevelFrom60To70()" classname="shelter.OrganicDogTest" time="0.017"/>
+  <testcase name="feedShouldIncreaseFoodLevelFrom20To30()" classname="shelter.OrganicDogTest" time="0.001"/>
+  <testcase name="playWithShouldDecreaseBoredomFrom50To45()" classname="shelter.OrganicDogTest" time="0.001"/>
+  <testcase name="walkIncreasesHappinessLevelBy10()" classname="shelter.OrganicDogTest" time="0.001"/>
+  <testcase name="cleanCagesShouldIncreaseCageCleanlinessFrom50To100()" classname="shelter.OrganicDogTest" time="0.001"/>
+  <testcase name="walkMaintainsCageCleanlinessLevelByOffsettingTick()" classname="shelter.OrganicDogTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
