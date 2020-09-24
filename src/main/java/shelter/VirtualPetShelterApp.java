@@ -48,8 +48,13 @@ public class VirtualPetShelterApp {
             if (userOption.equals("1")) {
                 System.out.println("Thank you for volunteering! The pets are excited that you're here.\n");
                 System.out.println("These are the pets we have in the shelter today:\n");
-                myVirtualPetShelter.showAllPetsStatuses();
-
+                myVirtualPetShelter.showAllOrganicCatStatuses();
+                System.out.println(" ");
+                myVirtualPetShelter.showAllOrganicDogStatuses();
+                System.out.println(" ");
+                myVirtualPetShelter.showAllRoboticCatStatuses();
+                System.out.println(" ");
+                myVirtualPetShelter.showAllRoboticDogStatuses();
                 do {
                     System.out.println("");
                     System.out.println("What would you like to do?");
@@ -67,20 +72,26 @@ public class VirtualPetShelterApp {
                         System.out.println(" ");
                         System.out.println("Thank you for choosing to feed these hungry pets!\n");
                         myVirtualPetShelter.feedAll();
-                        System.out.println("Here are the pets' updated statuses:\n");
-                        myVirtualPetShelter.showAllPetsStatuses();
+                        System.out.println("Here are the organic pets' updated statuses:\n");
+                        myVirtualPetShelter.showAllOrganicCatStatuses();
+                        System.out.println(" ");
+                        myVirtualPetShelter.showAllOrganicDogStatuses();
 
                     } else if (userChoice.equals("2")) {
                         System.out.println("Thank you for choosing to give water to these thirsty pets!\n");
                         myVirtualPetShelter.giveWaterToAll();
-                        System.out.println("Here are the pets' updated statuses:\n");
-                        myVirtualPetShelter.showAllPetsStatuses();
+                        System.out.println("Here are the organic pets' updated statuses:\n");
+                        myVirtualPetShelter.showAllOrganicCatStatuses();
+                        System.out.println(" ");
+                        myVirtualPetShelter.showAllOrganicDogStatuses();
 
                     } else if (userChoice.equals("3")) {
                         System.out.println("Thank you for choosing to oil the robotic pets!\n");
                         myVirtualPetShelter.oilAll();
-                        System.out.println("Here are the pets' updated statuses:\n");
-                        myVirtualPetShelter.showAllPetsStatuses();
+                        System.out.println("Here are the robotic pets' updated statuses:\n");
+                        myVirtualPetShelter.showAllRoboticCatStatuses();
+                        System.out.println(" ");
+                        myVirtualPetShelter.showAllRoboticDogStatuses();
 
                     } else if (userChoice.equals("4")) {
                         System.out.print("Thank you for choosing to play with a pet!\n");
@@ -90,32 +101,45 @@ public class VirtualPetShelterApp {
                         int amountOfTimeToPlay = choice.nextInt();
                         choice.nextLine();
                         myVirtualPetShelter.playWith(petToPlayWith, amountOfTimeToPlay);
-                        System.out.println("Here are the pets' updated statuses:\n");
-                        myVirtualPetShelter.showAllPetsStatuses();
 
                     } else if (userChoice.equals("5")) {
-                        System.out.println("Thank you for choosing to clean the dog cages!");
-                        myVirtualPetShelter.cleanDogCages();
-                        System.out.println("Here are the pets' updated statuses:\n");
-                        myVirtualPetShelter.showAllPetsStatuses();
-
-                    } else if (userChoice.equals("6")) {
                         System.out.println("Thank you for choosing to walk the dogs!");
                         myVirtualPetShelter.walkAllDogs();
-                        System.out.println("Here are the pets' updated statuses:\n");
-                        myVirtualPetShelter.showAllPetsStatuses();
+                        System.out.println("Here are the dogs' updated statuses:\n");
+                        myVirtualPetShelter.showAllOrganicDogStatuses();
+                        System.out.println(" ");
+                        myVirtualPetShelter.showAllRoboticDogStatuses();
+
+                    } else if (userChoice.equals("6")) {
+                        System.out.println("Thank you for choosing to clean the dog cages!");
+                        myVirtualPetShelter.cleanDogCages();
+                        System.out.println("Here are the organic dogs' updated statuses:\n");
+                        myVirtualPetShelter.showAllOrganicDogStatuses();
 
                     } else if (userChoice.equals("7")) {
                         System.out.println("Thank you for choosing to clean the litter boxes!");
                         myVirtualPetShelter.cleanCatLitterBoxes();
-                        System.out.println("Here are the pets' updated statuses:\n");
-                        myVirtualPetShelter.showAllPetsStatuses();
+                        System.out.println("Here are the organic cats' updated statuses:\n");
+                        myVirtualPetShelter.showAllOrganicCatStatuses();
+
 
                     } else if (userChoice.equals("8")) {
                         System.out.println("Thank you for volunteering today!");
                         System.exit(0);
-                    }
-                } while (! userChoice.equals("4"));
+                    } else
+                        System.out.println("I'm sorry...I do not understand.");
+
+                    System.out.println(" ");
+                    System.out.println("Here are all of the pets' updated statuses:\n");
+                    myVirtualPetShelter.showAllOrganicCatStatuses();
+                    System.out.println(" ");
+                    myVirtualPetShelter.showAllOrganicDogStatuses();
+                    System.out.println(" ");
+                    myVirtualPetShelter.showAllRoboticCatStatuses();
+                    System.out.println(" ");
+                    myVirtualPetShelter.showAllRoboticDogStatuses();
+
+                } while (!userChoice.equals("4"));
 
             } else if (userOption.equals("2")) {
                 System.out.println(" ");
@@ -161,8 +185,17 @@ public class VirtualPetShelterApp {
                 }
                 System.out.println("Congratulations! " + newPetName + " has been admitted!\n");
                 System.out.println("Here is the status of all of the pets in the shelter:\n");
-                myVirtualPetShelter.showAllPetsStatuses();
-            }
+                myVirtualPetShelter.showAllOrganicCatStatuses();
+                System.out.println(" ");
+                myVirtualPetShelter.showAllOrganicDogStatuses();
+                System.out.println(" ");
+                myVirtualPetShelter.showAllRoboticCatStatuses();
+                System.out.println(" ");
+                myVirtualPetShelter.showAllRoboticDogStatuses();
+
+            } else
+                System.out.println("I'm sorry...I do not understand.");
+
             myVirtualPetShelter.tickAll();
 
             System.out.println(" ");
@@ -171,8 +204,10 @@ public class VirtualPetShelterApp {
             System.out.println("Press 3 if you want to admit a pet.");
             System.out.println("Press 4 if you want to exit.");
             userOption = option.nextLine();
+
         }
-        System.out.println("Thank you for visiting the shelter today!");
+            System.out.println("Thank you for visiting the shelter today!");
+
     }
 
 }

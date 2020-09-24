@@ -15,6 +15,8 @@ public class OrganicDog extends OrganicPet implements Walk {
 
     public void cleanCages() {
         cageCleanlinessLevel = 100;
+        healthLevel +=10;
+        happinessLevel +=5;
     }
 
     @Override

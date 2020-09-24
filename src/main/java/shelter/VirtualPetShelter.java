@@ -1,6 +1,5 @@
 package shelter;
 
-import java.awt.*;
 import java.util.*;
 
 public class VirtualPetShelter {
@@ -18,27 +17,6 @@ public class VirtualPetShelter {
     public void removePet(VirtualPet pet) {
         petList.remove(pet.getName(), pet);
     }
-
-
-//    public Collection<VirtualPet> getAllOrganicPets() {
-//        Collection<VirtualPet> organicPets = new ArrayList<>();
-//        for (VirtualPet pet : petList.values()) {
-//            if (pet instanceof OrganicPet) {
-//                organicPets.add(pet);
-//            }
-//        }
-//        return organicPets;
-//    }
-//
-//    public Collection<VirtualPet> getAllRoboticPets() {
-//        Collection<VirtualPet> roboticPets = new ArrayList<>();
-//        for (VirtualPet pet : petList.values()) {
-//            if (pet instanceof RoboticPet) {
-//                roboticPets.add(pet);
-//            }
-//        }
-//        return roboticPets;
-//    }
 
     public void feedAll() {
         for (VirtualPet pet : petList.values()) {
@@ -106,83 +84,93 @@ public class VirtualPetShelter {
                 ((OrganicCat) pet).tick();
             }
             if (pet instanceof OrganicDog) {
-
+                ((OrganicDog) pet).tick();
+            }
+            if (pet instanceof RoboticCat) {
+                ((RoboticCat) pet).tick();
+            }
+            if (pet instanceof RoboticDog); {
+                ((RoboticDog) pet).tick();
             }
         }
     }
 
-    public void showAllOrganicCats() {
-        String format = "%-10s %15s %15s %15s %15s %15s %20s\n";
-        System.out.format(format, "Name", "Health Level", "Happiness Level", "Food Level", "Water Level", "Boredom Level", "Pet Waste\n");
+    public void showAllOrganicCatStatuses() {
+        String format = "%-20s %20s %20s %20s %20s %20s %20s %20s\n";
+        System.out.format(format, "Name", "PetType", "Health Level", "Happiness Level", "Food Level", "Water Level", "Boredom Level", "Litter Box Cleanliness Level\n");
         for (VirtualPet pet : petList.values()) {
             if (pet instanceof OrganicCat) {
                 String petName = pet.getName();
+                String petType = pet.getType();
                 int healthLevel = pet.getHealthLevel();
                 int happinessLevel = pet.getHappinessLevel();
                 int foodLevel = ((OrganicCat) pet).getFoodLevel();
                 int waterLevel = ((OrganicCat) pet).getWaterLevel();
                 int boredomLevel = ((OrganicCat) pet).getBoredomLevel();
                 int litterBoxCleanlinessLevel = ((OrganicCat) pet).getLitterBoxCleanlinessLevel();
-                System.out.format(format, petName, healthLevel, happinessLevel, foodLevel, waterLevel, boredomLevel, litterBoxCleanlinessLevel);
+                System.out.format(format, petName, petType, healthLevel, happinessLevel, foodLevel, waterLevel, boredomLevel, litterBoxCleanlinessLevel);
             }
         }
     }
 
-    public void showAllOrganicDogs() {
-        String format = "%-10s %15s %15s %15s %15s %15s %20s\n";
-        System.out.format(format, "Name", "Health Level", "Happiness Level", "Food Level", "Water Level", "Boredom Level", "Pet Waste\n");
+    public void showAllOrganicDogStatuses() {
+        String format = "%-20s %20s %20s %20s %20s %20s %20s %20s\n";
+        System.out.format(format, "Name", "PetType", "Health Level", "Happiness Level", "Food Level", "Water Level", "Boredom Level", "Cage Cleanliness Level\n");
         for (VirtualPet pet : petList.values()) {
             if (pet instanceof OrganicDog) {
                 String petName = pet.getName();
+                String petType = pet.getType();
                 int healthLevel = pet.getHealthLevel();
                 int happinessLevel = pet.getHappinessLevel();
                 int foodLevel = ((OrganicDog) pet).getFoodLevel();
                 int waterLevel = ((OrganicDog) pet).getWaterLevel();
                 int boredomLevel = ((OrganicDog) pet).getBoredomLevel();
                 int cageCleanlinessLevel = ((OrganicDog) pet).getCageCleanlinessLevel();
-                System.out.format(format, petName, healthLevel, happinessLevel, foodLevel, waterLevel, boredomLevel, cageCleanlinessLevel);
+                System.out.format(format, petName, petType, healthLevel, happinessLevel, foodLevel, waterLevel, boredomLevel, cageCleanlinessLevel);
             }
         }
     }
 
-    public void showAllRoboticCats() {
-        String format = "%-10s %15s %15s %20s\n";
-        System.out.format(format, "Name", "Health Level", "Happiness Level", "Oil Level\n");
+    public void showAllRoboticCatStatuses() {
+        String format = "%-20s %20s %20s %20s %20s\n";
+        System.out.format(format, "Name", "PetType", "Health Level", "Happiness Level", "Oil Level\n");
         for (VirtualPet pet : petList.values()) {
             if (pet instanceof RoboticCat) {
                 String petName = pet.getName();
+                String petType = pet.getType();
                 int healthLevel = pet.getHealthLevel();
                 int happinessLevel = pet.getHappinessLevel();
                 int oilLevel = ((RoboticCat) pet).getOilLevel();
-                System.out.format(format, petName, healthLevel, happinessLevel, oilLevel);
+                System.out.format(format, petName, petType, healthLevel, happinessLevel, oilLevel);
             }
         }
     }
 
-    public void showAllRoboticDogs() {
-        String format = "%-10s %15s %15s %20s\n";
-        System.out.format(format, "Name", "Health Level", "Happiness Level", "Oil Level\n");
+    public void showAllRoboticDogStatuses() {
+        String format = "%-20s %20s %20s %20s %20s\n";
+        System.out.format(format, "Name", "PetType", "Health Level", "Happiness Level", "Oil Level\n");
         for (VirtualPet pet : petList.values()) {
             if (pet instanceof RoboticDog) {
                 String petName = pet.getName();
+                String petType = pet.getType();
                 int healthLevel = pet.getHealthLevel();
                 int happinessLevel = pet.getHappinessLevel();
                 int oilLevel = ((RoboticDog) pet).getOilLevel();
-                System.out.format(format, petName, healthLevel, happinessLevel, oilLevel);
+                System.out.format(format, petName, petType, healthLevel, happinessLevel, oilLevel);
             }
         }
     }
 
 
     public void showAllPetsStatuses() {
-        String format = "%-20s %30s %30s %30s\n";
-        System.out.format(format, "Name", "Type", "Health Level", "Happiness Level\n");
+        String format = "%-20s %20s %20s %20s\n";
+        System.out.format(format, "Name", "Pet Type", "Health Level", "Happiness Level\n");
         for (VirtualPet pet : petList.values()) {
             String petName = pet.getName();
             String petType = pet.getType();
             int healthLevel = pet.getHealthLevel();
             int happinessLevel = pet.getHappinessLevel();
-            System.out.format(format, petName, healthLevel, happinessLevel);
+            System.out.format(format, petName, petType, healthLevel, happinessLevel);
         }
     }
 
@@ -195,5 +183,4 @@ public class VirtualPetShelter {
             System.out.format(format, petName, petDescription);
         }
     }
-
 }

@@ -15,6 +15,8 @@ public class OrganicCat extends OrganicPet {
 
     public void cleanLitterBoxes() {
         litterBoxCleanlinessLevel = 100;
+        healthLevel +=10;
+        happinessLevel +=5;
     }
 
     public void tick() {
