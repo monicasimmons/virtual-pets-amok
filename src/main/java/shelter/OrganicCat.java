@@ -23,8 +23,6 @@ public class OrganicCat extends OrganicPet {
         litterBoxCleanlinessLevel -= 3;
         if (this.litterBoxCleanlinessLevel <= 50)
             healthLevel -= 5;
-        System.out.println("ALERT: My litter box cleanliness level is low. Please clean my litter box!");
-
     }
 
 }

@@ -6,8 +6,6 @@ public class VirtualPetShelterApp {
 
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        Scanner option = new Scanner(System.in);
-        Scanner choice = new Scanner(System.in);
 
         String userOption;
         String userChoice;
@@ -41,7 +39,7 @@ public class VirtualPetShelterApp {
         System.out.println("Enter 2 if you want to adopt a pet.");
         System.out.println("Enter 3 if you want to admit a pet.");
         System.out.println("Enter 4 if you want to exit.");
-        userOption = option.nextLine();
+        userOption = input.nextLine();
 
         while (!userOption.equals("8")) {
 
@@ -66,7 +64,7 @@ public class VirtualPetShelterApp {
                     System.out.println("Enter 6 to clean dog cages.");
                     System.out.println("Enter 7 to clean cat litter boxes.");
                     System.out.println("Enter 8 to exit.");
-                    userChoice = choice.nextLine();
+                    userChoice = input.nextLine();
 
                     if (userChoice.equals("1")) {
                         System.out.println(" ");
@@ -96,10 +94,10 @@ public class VirtualPetShelterApp {
                     } else if (userChoice.equals("4")) {
                         System.out.print("Thank you for choosing to play with a pet!\n");
                         System.out.println("Which pet would you like to play with?");
-                        String petToPlayWith = choice.nextLine();
+                        String petToPlayWith = input.nextLine();
                         System.out.println("How many minutes do you want to play?");
-                        int amountOfTimeToPlay = choice.nextInt();
-                        choice.nextLine();
+                        int amountOfTimeToPlay = input.nextInt();
+                        input.nextLine();
                         myVirtualPetShelter.playWith(petToPlayWith, amountOfTimeToPlay);
 
                     } else if (userChoice.equals("5")) {
@@ -147,25 +145,24 @@ public class VirtualPetShelterApp {
                 myVirtualPetShelter.showPetNameDescription();
                 System.out.println(" ");
                 System.out.println("Which pet are you interested in adopting?");
-                String adoptedPet = option.nextLine();
-                System.out.println(" ");
+                String adoptedPet = input.nextLine();
                 System.out.println("You are going to love " + adoptedPet + "!");
                 myVirtualPetShelter.removePet(myVirtualPetShelter.findPet(adoptedPet));
                 System.out.println("Congratulations! Your adoption is now complete!\n");
                 System.out.println("These are the remaining pets in the shelter.\n");
-                myVirtualPetShelter.showAllPetsStatuses();
+                myVirtualPetShelter.showPetNameDescription();
 
             } else if (userOption.equals("3")) {
                 System.out.println("Thank you for bringing a pet into our shelter!\n");
                 System.out.println("What is this pet's name? If you're not sure, be creative!");
-                String newPetName = option.nextLine();
+                String newPetName = input.nextLine();
                 System.out.println("Please write a description for " + newPetName + ".");
-                String newPetDescription = option.nextLine();
+                String newPetDescription = input.nextLine();
                 System.out.println("Enter 1 if your pet is an organic cat.");
                 System.out.println("Enter 2 if your pet is a robotic cat.");
                 System.out.println("Enter 3 if your pet is an organic dog.");
                 System.out.println("Enter 4 if your pet is a robotic dog.");
-                newPetDetail = choice.nextLine();
+                newPetDetail = input.nextLine();
                 if (newPetDetail.equals("1")) {
                     String newPetType = "organic";
                     OrganicCat petToAdd = new OrganicCat(newPetName, newPetDescription, newPetType, (int) (Math.random() * 99 + 1), (int) (Math.random() * 99 + 1), (int) (Math.random() * 99 + 1), (int) (Math.random() * 99 + 1), (int) (Math.random() * 99 + 1), (int) (Math.random() * 99 + 1));
@@ -203,7 +200,7 @@ public class VirtualPetShelterApp {
             System.out.println("Press 2 if you want to adopt a pet.");
             System.out.println("Press 3 if you want to admit a pet.");
             System.out.println("Press 4 if you want to exit.");
-            userOption = option.nextLine();
+            userOption = input.nextLine();
 
         }
             System.out.println("Thank you for visiting the shelter today!");

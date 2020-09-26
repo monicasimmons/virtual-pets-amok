@@ -16,6 +16,5 @@ public class RoboticDog extends RoboticPet implements Walk {
         oilLevel -= 3;
         if (this.oilLevel <= 50)
             healthLevel -= 5;
-        System.out.println("ALERT: My oil level is low. Please give me more oil!");
     }
 }

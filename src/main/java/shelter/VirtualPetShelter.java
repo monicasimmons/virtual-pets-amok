@@ -14,8 +14,8 @@ public class VirtualPetShelter {
         return petList.get(name);
     }
 
-    public void removePet(VirtualPet pet) {
-        petList.remove(pet.getName(), pet);
+    public void removePet(VirtualPet petToAdopt) {
+        petList.remove(petToAdopt.getName(), petToAdopt);
     }
 
     public void feedAll() {
@@ -83,13 +83,19 @@ public class VirtualPetShelter {
             if (pet instanceof OrganicCat) {
                 ((OrganicCat) pet).tick();
             }
+        }
+        for (VirtualPet pet : petList.values()) {
             if (pet instanceof OrganicDog) {
                 ((OrganicDog) pet).tick();
             }
+        }
+        for (VirtualPet pet : petList.values()) {
             if (pet instanceof RoboticCat) {
                 ((RoboticCat) pet).tick();
             }
-            if (pet instanceof RoboticDog); {
+        }
+        for (VirtualPet pet : petList.values()) {
+            if (pet instanceof RoboticDog) {
                 ((RoboticDog) pet).tick();
             }
         }
@@ -175,12 +181,13 @@ public class VirtualPetShelter {
     }
 
     public void showPetNameDescription() {
-        String format = "%-20s %30s\n";
-        System.out.format(format, "Name", "Description\n");
+        String format = "%-20s %20s %40s\n";
+        System.out.format(format, "Name", "Type", "Description\n");
         for (VirtualPet pet : petList.values()) {
             String petName = pet.getName();
+            String petType = pet.getType();
             String petDescription = pet.getPetDescription();
-            System.out.format(format, petName, petDescription);
+            System.out.format(format, petName, petType, petDescription);
         }
     }
 }

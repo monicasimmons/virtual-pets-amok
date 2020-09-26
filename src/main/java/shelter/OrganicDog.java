@@ -30,8 +30,6 @@ public class OrganicDog extends OrganicPet implements Walk {
         cageCleanlinessLevel -= 3;
         if (this.cageCleanlinessLevel <= 50)
             healthLevel -= 5;
-        System.out.println("ALERT: My cage cleanliness level is low. Please clean my cage!");
-
     }
 }
 
